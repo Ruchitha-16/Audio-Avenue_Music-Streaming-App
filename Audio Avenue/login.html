@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Audio Avenue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-body {
+      background: url('assets/images/login-bg.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 350px;
+      margin: 10% auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .password-wrapper {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      user-select: none;
+      font-size: 18px;
+    }
+
+    button[type="submit"] {
+      background-color: #6c63ff;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #5a54d1;
+    }
+  </style>
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Login to Audio Avenue 🎵</h2>
+
+    <!-- ✅ Fixed form: removed nested form -->
+    <form onsubmit="return handleLogin(event)">
+      <input type="text" placeholder="Username" id="usernameField" required>
+
+      <div class="password-wrapper">
+        <input type="password" placeholder="Password" id="passwordField" required>
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+      <button type="submit">Login</button>
+
+    
+
+    
+
+<!-- 🔗 Forgot Password link just below password -->
+<div style="width: 90%; text-align: right; margin-bottom: 8px;">
+  <a href="forgot-password.html" style="font-size: 14px; color: #6a5acd; text-decoration: none;">
+    Forgot Password?
+  </a>
+</div>
+
+
+<!-- 🔗 Sign Up link below login button -->
+<div style="margin-top: 12px; font-size: 14px;">
+  Don't have an account?
+  <a href="signup.html" style="color: #6a5acd; text-decoration: none;">Sign up</a>
+</div>
+
+</form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("passwordField");
+      const toggleIcon = document.querySelector(".toggle-password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleIcon.textContent = "🙈";
+      } else {
+        passwordField.type = "password";
+        toggleIcon.textContent = "👁️";
+      }
+    }
+
+    function handleLogin(event) {
+  event.preventDefault();
+
+  // ✅ Step 1: Get username value
+  const username = document.getElementById("usernameField").value;
+
+  // ✅ Step 2: Store in localStorage
+  localStorage.setItem("username", username);
+
+  // (Optional: You can add real credential checking here)
+
+  // ✅ Step 3: Redirect
+  window.location.href = "index.html";
+  return false;
+}
+
+  </script>
+</body>
+</html>

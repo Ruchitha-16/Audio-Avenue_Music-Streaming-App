@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audio Avenue</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="light-mode">
+  <!-- Dark/Light Mode Toggle -->
+  <div class="mode-toggle" onclick="toggleMode()">
+    <span id="mode-icon">🌙</span>
+  </div>
+
+<!-- Profile Icon with Username -->
+<div class="profile-container">
+  <a href="profile.html">
+    <img id="music-profile-pic" src="assets/images/profile-icon.png" alt="Profile" style="width: 50px; height: 50px; border-radius: 50%;" />
+
+
+  </a>
+  <p id="usernameDisplay" class="username-text"></p>
+</div>
+
+
+ 
+  <!-- Centered Logo and Welcome Message -->
+<div class="header-container">
+  <img src="assets/images/logo.png" alt="Audio Avenue Logo" class="logo">
+  <h1 class="welcome-title">Welcome to Audio Avenue 🎵</h1>
+
+
+
+    <div class="song-container">
+      <!-- Song 1 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song1.png" alt="Song 1">
+        <h3>Song 1</h3>
+        <p>Golden Sparrow</p>
+
+        <audio controls>
+          <source src="assets/songs/song1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 2 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song2.png" alt="Song 2">
+        <h3>Song 2</h3>
+        <p> Oy! Oy!</p>
+        <audio controls>
+          <source src="assets/songs/song2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 3 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song3.png" alt="Song 3">
+        <h3>Song 3</h3>
+        <p>Chali Chaliga</p>
+        <audio controls>
+          <source src="assets/songs/song3.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 4 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song4.png" alt="Song 4">
+        <h3>Song 4</h3>
+        <p> Kollagotte</p>
+        <audio controls>
+          <source src="assets/songs/song4.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 5 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song5.png" alt="Song 5">
+        <h3>Song 5</h3>
+        <p> Manasaa</p>
+        <audio controls>
+          <source src="assets/songs/song5.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 6 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song6.png" alt="Song 6">
+        <h3>Song 6</h3>
+        <p> Preminche Premavaa</p>
+        <audio controls>
+          <source src="assets/songs/song6.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 7 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song7.png" alt="Song 7">
+        <h3>Song 7</h3>
+        <p>Saradaga Kasepaina</p>
+        <audio controls>
+          <source src="assets/songs/song7.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 8 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song8.png" alt="Song 8">
+        <h3>Song 8</h3>
+        <p>Don'u Don'u Don'u</p>
+        <audio controls>
+          <source src="assets/songs/song8.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 9 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song9.png" alt="Song 9">
+        <h3>Song 9</h3>
+        <p> Katha Kaadhey</p>
+        <audio controls>
+          <source src="assets/songs/song9.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 10 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song10.png" alt="Song 10">
+        <h3>Song 10</h3>
+        <p> Nuvve Pranayaagni Lo</p>
+        <audio controls>
+          <source src="assets/songs/song10.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Song 11 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song11.png" alt="Song 11">
+        <h3>Song 11</h3>
+        <p>Enduko Emo</p>
+        <audio controls>
+          <source src="assets/songs/song11.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    <!-- Song 12 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song12.png" alt="Song 12">
+        <h3>Song 12</h3>
+        <p>Hayirabba</p>
+        <audio controls>
+          <source src="assets/songs/song12.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    <!-- Song 13 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song13.png" alt="Song 13">
+        <h3>Song 13</h3>
+        <p>Nee Yadalo Naaku</p>
+        <audio controls>
+          <source src="assets/songs/song13.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      
+    <!-- Song 14 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song14.png" alt="Song 14">
+            <h3>Song 14</h3>
+            <p> Nemali</p>
+            <audio controls>
+            <source src="assets/songs/song14.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 15 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song15.png" alt="Song 15">
+            <h3>Song 15</h3>
+            <p>Arabic Kuthu</p>
+            <audio controls>
+            <source src="assets/songs/song15.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 16 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song16.png" alt="Song 10">
+        <h3>Song 16</h3>
+        <p>Bullet</p>
+        <audio controls>
+          <source src="assets/songs/song16.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    <!-- Song 17 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song17.png" alt="Song 17">
+            <h3>Song 17</h3>
+            <p>Callin U</p>
+            <audio controls>
+            <source src="assets/songs/song17.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 18 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song18.png" alt="Song 18">
+            <h3>Song 18</h3>
+            <p>Chaleya</p>
+            <audio controls>
+            <source src="assets/songs/song18.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 19 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song19.png" alt="Song 19">
+            <h3>Song 19</h3>
+            <p>Challaga</p>
+            <audio controls>
+            <source src="assets/songs/song19.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 20 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song20.png" alt="Song 20">
+            <h3>Song 20</h3>
+            <p>Chamka Chamka</p>
+            <audio controls>
+            <source src="assets/songs/song20.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 21 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song21.png" alt="Song 21">
+        <h3>Song 21</h3>
+        <p>Chammak Challo</p>
+        <audio controls>
+          <source src="assets/songs/song21.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    <!-- Song 22 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song22.png" alt="Song 22">
+            <h3>Song 22</h3>
+            <p>Chikni Chameli</p>
+            <audio controls>
+            <source src="assets/songs/song22.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 23 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song23.png" alt="Song 23">
+            <h3>Song 23</h3>
+            <p>Chuttamalle</p>
+            <audio controls>
+            <source src="assets/songs/song23.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 24 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song24.png" alt="Song 24">
+            <h3>Song 24</h3>
+            <p>High Heels Te Nachche</p>
+            <audio controls>
+            <source src="assets/songs/song24.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 25 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song25.png" alt="Song 25">
+            <h3>Song 25</h3>
+            <p>Humma Humma</p>
+            <audio controls>
+            <source src="assets/songs/song25.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 26 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song26.png" alt="Song 26">
+            <h3>Song 26</h3>
+            <p>Illegal Weapon 2.0</p>
+            <audio controls>
+            <source src="assets/songs/song26.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 27 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song27.png" alt="Song 27">
+            <h3>Song 27</h3>
+            <p>Inka Edo</p>
+            <audio controls>
+            <source src="assets/songs/song27.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 28 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song28.png" alt="Song 28">
+            <h3>Song 28</h3>
+            <p>I-Wanna-Be-Yours</p>
+            <audio controls>
+            <source src="assets/songs/song28.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 29 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song29.png" alt="Song 29">
+            <h3>Song 29</h3>
+            <p>Jalebi-Baby-Remix</p>
+            <audio controls>
+            <source src="assets/songs/song29.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 30 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song30.png" alt="Song 30">
+            <h3>Song 30</h3>
+            <p>Kurchi Madathapetti</p>
+            <audio controls>
+            <source src="assets/songs/song30.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 31 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song31.png" alt="Song 31">
+        <h3>Song 31</h3>
+        <p>People</p>
+        <audio controls>
+          <source src="assets/songs/song31.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    <!-- Song 32 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song32.png" alt="Song 32">
+            <h3>Song 32</h3>
+            <p>Madam-Sir-Madam-Anthe</p>
+            <audio controls>
+            <source src="assets/songs/song32.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+    <!-- Song 33 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song33.png" alt="Song 33">
+            <h3>Song 33</h3>
+            <p>Manasilaayo</p>
+            <audio controls>
+            <source src="assets/songs/song33.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 34 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song34.png" alt="Song 34">
+            <h3>Song 34</h3>
+            <p>Middle Of The Night</p>
+            <audio controls>
+            <source src="assets/songs/song34.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 35 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song35.png" alt="Song 35">
+            <h3>Song 35</h3>
+            <p>Nadaaniyan</p>
+            <audio controls>
+            <source src="assets/songs/song35.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 36 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song36.png" alt="Song 36">
+            <h3>Song 36</h3>
+            <p>Nagada Sang Dhol</p>
+            <audio controls>
+            <source src="assets/songs/song36.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 37 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song37.png" alt="Song 37">
+            <h3>Song 37</h3>
+            <p>Odiyamma</p>
+            <audio controls>
+            <source src="assets/songs/song37.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 38 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song38.png" alt="Song 38">
+            <h3>Song 38</h3>
+            <p>Ku-Lo-Sa</p>
+            <audio controls>
+            <source src="assets/songs/song38.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 39 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song39.png" alt="Song 39">
+            <h3>Song 39</h3>
+            <p>Believer</p>
+            <audio controls>
+            <source src="assets/songs/song39.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 40 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song40.png" alt="Song 40">
+            <h3>Song 40</h3>
+            <p>Peelings</p>
+            <audio controls>
+            <source src="assets/songs/song40.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 41 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song41.png" alt="Song 41">
+            <h3>Song 41</h3>
+            <p>Perfect</p>
+            <audio controls>
+            <source src="assets/songs/song41.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 42 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song42.png" alt="Song 42">
+            <h3>Song 42</h3>
+            <p>Raataan-Lambiyan</p>
+            <audio controls>
+            <source src="assets/songs/song42.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 43 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song43.png" alt="Song 43">
+            <h3>Song 43</h3>
+            <p>Ranjithame</p>
+            <audio controls>
+            <source src="assets/songs/song43.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 44 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song44.png" alt="Song 44">
+            <h3>Song 44</h3>
+            <p>Night-changes</p>
+            <audio controls>
+            <source src="assets/songs/song44.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 45 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song45.png" alt="Song 45">
+            <h3>Song 45</h3>
+            <p>Sajna,Say Yes To The Dress</p>
+            <audio controls>
+            <source src="assets/songs/song45.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 46 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song46.png" alt="Song 46">
+            <h3>Song 46</h3>
+            <p>Saree Ke Fall Sa</p>
+            <audio controls>
+            <source src="assets/songs/song46.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 47 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song47.png" alt="Song 47">
+            <h3>Song 47</h3>
+            <p>Sun Sathiya</p>
+            <audio controls>
+            <source src="assets/songs/song47.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 48 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song48.png" alt="Song 48">
+            <h3>Song 48</h3>
+            <p>Worth It</p>
+            <audio controls>
+            <source src="assets/songs/song48.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 49 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song49.png" alt="Song 49">
+            <h3>Song 49</h3>
+            <p>Anjanadri Theme</p>
+            <audio controls>
+            <source src="assets/songs/song49.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    <!-- Song 50 -->
+        <div class="song-card">
+            <img class="song-img" src="assets/images/song50.png" alt="Song 50">
+            <h3>Song 50</h3>
+            <p>Poolamme pilla</p>
+            <audio controls>
+            <source src="assets/songs/song50.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+        </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        icon.textContent = "☀️";
+        body.style.backgroundImage = "url('assets/images/dark-bg.png')";
+      } else {
+        icon.textContent = "🌙";
+        body.style.backgroundImage = "url('assets/images/light-bg.png')";
+      }
+    }
+  </script>
+
+
+<script>
+  const allAudioElements = document.querySelectorAll('audio');
+
+  allAudioElements.forEach(audio => {
+    audio.addEventListener('play', () => {
+      allAudioElements.forEach(otherAudio => {
+        if (otherAudio !== audio) {
+          otherAudio.pause(); // Pause any other audio
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  // This function will save downloaded song names to localStorage
+  function downloadSong(songName) {
+    let downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
+    if (!downloads.includes(songName)) {
+      downloads.push(songName);
+      localStorage.setItem("downloads", JSON.stringify(downloads));
+    }
+  }
+</script>
+
+
+<script>
+  function handleDownload(songName) {
+    // Trigger download (you may already have this implemented)
+    alert("Downloading: " + songName);
+
+    // Store song in localStorage
+    downloadSong(songName);
+  }
+
+  function downloadSong(songName) {
+    let downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
+    if (!downloads.includes(songName)) {
+      downloads.push(songName);
+      localStorage.setItem("downloads", JSON.stringify(downloads));
+    }
+  }
+</script>
+ 
+
+
+
+<script>
+  window.onload = function() {
+    const username = localStorage.getItem("username");
+    if (username) {
+      document.getElementById("usernameDisplay").textContent = Ruchitha;
+    }
+  };
+</script>
+
+
+<script>
+  const profilePic = localStorage.getItem("profilePic");
+  if (profilePic) {
+    document.getElementById("music-profile-pic").src = profilePic;
+  }
+</script>
+ 
+</body>
+</html>

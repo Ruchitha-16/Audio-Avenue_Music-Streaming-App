@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Audio Avenue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="signup-body">
+  <div class="login-container">
+    <h2>Create Account</h2>
+    <form onsubmit="handleSignup(event)">
+  <input type="text" placeholder="Username" required />
+  <input type="password" placeholder="Password" required />
+  <input type="password" placeholder="Confirm Password" required />
+  <button type="submit">Create Account</button>
+</form>
+
+    <p style="margin-top: 10px;">Already have an account?
+      <a href="login.html" style="color: #6a5acd;">Login here</a>
+    </p>
+  </div>
+
+  <script>
+  function handleSignup(event) {
+    event.preventDefault(); // Prevent form from reloading the page
+    alert("Account created successfully! Now go to login.");
+    window.location.href = "login.html"; // redirect to login
+  }
+</script>
+ 
+</body>
+</html>
