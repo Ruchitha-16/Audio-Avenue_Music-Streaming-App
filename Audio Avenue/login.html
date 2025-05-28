@@ -72,7 +72,7 @@
     <h2>Login to Audio Avenue 🎵</h2>
 
     <!-- ✅ Fixed form: removed nested form -->
-    <form id="loginForm">
+    <form onsubmit="return handleLogin(event)">
       <input type="text" placeholder="Username" id="usernameField" required>
 
       <div class="password-wrapper">
@@ -102,7 +102,11 @@
 </form>
   </div>
 
-  <script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("form").addEventListener("submit", handleLogin);
+      });
+
     function togglePassword() {
       const passwordField = document.getElementById("passwordField");
       const toggleIcon = document.querySelector(".toggle-password");
@@ -126,8 +130,9 @@
 
   // (Optional: You can add real credential checking here)
 
-  // ✅ Redirect to index page
+  // ✅ Step 3: Redirect
   window.location.href = "index.html";
+  return false;
 }
 
   </script>
