@@ -127,8 +127,15 @@
   // (Optional: You can add real credential checking here)
 
   // ✅ Step 3: Redirect
-  window.location.href = "index.html";
-  return false;
+ document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // stops page reload
+
+  // validate
+  if (valid) {
+    window.location.href = "index.html"; // or proper relative path
+  }
+});
+
 }
 
   </script>
