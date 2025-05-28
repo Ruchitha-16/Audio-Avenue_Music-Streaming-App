@@ -72,7 +72,7 @@
     <h2>Login to Audio Avenue 🎵</h2>
 
     <!-- ✅ Fixed form: removed nested form -->
-    <form onsubmit="return handleLogin(event)">
+    <form id="loginForm">
       <input type="text" placeholder="Username" id="usernameField" required>
 
       <div class="password-wrapper">
@@ -126,16 +126,8 @@
 
   // (Optional: You can add real credential checking here)
 
-  // ✅ Step 3: Redirect
- document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault(); // stops page reload
-
-  // validate
-  if (valid) {
-    window.location.href = "index.html"; // or proper relative path
-  }
-});
-
+  // ✅ Redirect to index page
+  window.location.href = "index.html";
 }
 
   </script>
