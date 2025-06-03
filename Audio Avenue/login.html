@@ -3,119 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - Audio Avenue</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    .login-body {
-      background: url('assets/images/login-bg.jpeg') no-repeat center center fixed;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('assets/images/login-bg.jpg');
       background-size: cover;
-      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .login-container {
-      max-width: 350px;
-      margin: 10% auto;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      color: #fff;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .login-container h2 {
       margin-bottom: 20px;
+      font-size: 28px;
+      color: #e0dfff;
+    }
+
+    .login-container h2 i {
+      color: #ff4e88;
     }
 
     input[type="text"],
     input[type="password"] {
-      width: 90%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
       font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.3);
     }
 
     .password-wrapper {
       position: relative;
-      width: 90%;
-      margin: 0 auto;
     }
 
     .toggle-password {
       position: absolute;
       top: 50%;
-      right: 10px;
+      right: 15px;
       transform: translateY(-50%);
       cursor: pointer;
-      user-select: none;
-      font-size: 18px;
+      color: #ccc;
     }
 
-    button[type="submit"] {
-      background-color: #6c63ff;
-      color: white;
-      padding: 10px 30px;
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff4e88, #8f44fd);
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
       cursor: pointer;
-      margin-top: 10px;
+      box-shadow: 0 0 15px #8f44fd;
+      transition: 0.3s ease;
     }
 
-    button[type="submit"]:hover {
-      background-color: #5a54d1;
+    .login-btn:hover {
+      box-shadow: 0 0 25px #ff4e88;
+      transform: scale(1.02);
     }
+
+    .links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #b29dff;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
-<body class="login-body">
+<body>
   <div class="login-container">
-    <h2>Login to Audio Avenue 🎵</h2>
+    <h2><i class="fa-solid fa-music"></i> Audio Avenue Login</h2>
 
-    <!-- ✅ Fixed form: removed nested form -->
     <form onsubmit="return handleLogin(event)">
-      <input type="text" placeholder="Username" id="usernameField" required>
+      <input type="text" placeholder="🎧 Username" id="usernameField" required>
 
       <div class="password-wrapper">
-        <input type="password" placeholder="Password" id="passwordField" required>
-        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        <input type="password" placeholder="🔒 Password" id="passwordField" required>
+        <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
       </div>
-      <button type="submit">Login</button>
 
-    
+      <button type="submit" class="login-btn">Login</button>
 
-    
+      <div class="links" style="text-align: right; margin-top: 10px;">
+        <a href="forgot-password.html">Forgot Password?</a>
+      </div>
 
-<!-- 🔗 Forgot Password link just below password -->
-<div style="width: 90%; text-align: right; margin-bottom: 8px;">
-  <a href="forgot-password.html" style="font-size: 14px; color: #6a5acd; text-decoration: none;">
-    Forgot Password?
-  </a>
-</div>
-
-
-<!-- 🔗 Sign Up link below login button -->
-<div style="margin-top: 12px; font-size: 14px;">
-  Don't have an account?
-  <a href="signup.html" style="color: #6a5acd; text-decoration: none;">Sign up</a>
-</div>
-
-</form>
+      <div class="links" style="margin-top: 15px;">
+        Don't have an account? <a href="signup.html">Sign up</a>
+      </div>
+    </form>
   </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector("form").addEventListener("submit", handleLogin);
-      });
-
+  <script>
     function togglePassword() {
       const passwordField = document.getElementById("passwordField");
       const toggleIcon = document.querySelector(".toggle-password");
       if (passwordField.type === "password") {
         passwordField.type = "text";
-        toggleIcon.textContent = "🙈";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
       } else {
         passwordField.type = "password";
-        toggleIcon.textContent = "👁️";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
       }
     }
 
