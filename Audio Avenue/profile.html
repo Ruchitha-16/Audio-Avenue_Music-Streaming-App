@@ -1,157 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>User Profile - Audio Avenue</title>
-  <link rel="stylesheet" href="profile.css" />
+  <meta charset="UTF-8">
+  <title>Profile | Audio Avenue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('assets/images/profile-bg.jpg') no-repeat center center/cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px cyan;
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+    }
+
+    .container img.profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid cyan;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .username-display {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    button {
+      font-family: 'Poppins', sans-serif;
+      padding: 10px 15px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: 500;
+    }
+
+    .pink-btn {
+      background-color: #ff5ecb;
+      color: white;
+    }
+
+    .pink-btn:hover {
+      background-color: #ff85d2;
+    }
+
+    .blue-btn {
+      background-color: cyan;
+      color: black;
+      box-shadow: 0 0 10px cyan;
+    }
+
+    .blue-btn:hover {
+      background-color: #00e0ff;
+    }
+
+    .red-btn {
+      background-color: #ff4b5c;
+      color: white;
+    }
+
+    .red-btn:hover {
+      background-color: #ff6e77;
+    }
+
+    .section {
+      margin-top: 25px;
+    }
+
+    h3 {
+      color: cyan;
+      margin-bottom: 8px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    input[type="file"],
+    input[type="text"] {
+      display: none;
+    }
+
+    label.upload-label,
+    label.username-label {
+      display: inline-block;
+      background-color: #ff5ecb;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <div class="container">
+    <!-- Profile Image -->
+    <img id="profileImage" class="profile-pic" src="assets/images/profile-icon.png" alt="Profile Picture">
 
-  <div class="profile-container">
-    <div class="profile-card">
-        <div class="profile-center">
-      <img src="assets/images/profile-icon.png" id="profile-pic" alt="Profile Picture">
-      
-      <input type="file" id="upload" accept="image/*" style="display: none;">
-      <button onclick="document.getElementById('upload').click()">Change Profile Picture</button>
+    <!-- Username -->
+    <div class="username-display" id="usernameDisplay">Ruchitha</div>
 
-      <h2 id="username">username</h2>
+    <!-- Change Profile Picture Button -->
+    <label for="profileInput" class="upload-label">Change Profile Picture</label>
+    <input type="file" id="profileInput" accept="image/*">
 
-      <h3>Downloaded Songs</h3>
-      <ul id="downloaded-songs">
-        <li>No songs downloaded yet.
-        </li>
-      </ul>
-      <a href="index.html" class="back-to-music">🎵 Go to Music Page</a>
+    <!-- Change Username Button -->
+    <label for="usernameInput" class="username-label">Change Username</label>
+    <input type="text" id="usernameInput" placeholder="Enter new name">
+
+    <!-- Music History -->
+    <div class="section">
+      <h3>🎵 Music History</h3>
+      <p>No songs played yet.</p>
+    </div>
+
+    <!-- Upload Music -->
+    <div class="section">
+      <h3>⏫ Upload Music</h3>
+      <button class="pink-btn">Upload MP3</button>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="button-group">
+      <a href="index.html"><button class="blue-btn">🎶 Go to Music Page</button></a>
+      <a href="login.html"><button class="red-btn">🔁 Logout</button></a>
     </div>
   </div>
-</div>
 
-  <style>
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: url('assets/images/profile-bg.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-}
-
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.profile-card {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 0 20px cyan;
-  width: 300px;
-}
-
-.profile-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid cyan;
-  margin-bottom: 10px;
-}
-
-.profile-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-card button {
-  background-color: cyan;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin: 10px 0;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.profile-card h2 {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.profile-card ul {
-  list-style: square;
-  padding-left: 20px;
-  text-align: left;
-}
-
-.back-to-music {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
-  background-color: #00e6e6;
-  color: #000;
-  font-weight: bold;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.back-to-music:hover {
-  background-color: #00cccc;
-}
- 
-  </style>
   <script>
-    // 1. Load and display username from localStorage
-    const username = localStorage.getItem("username") || "Ruchitha";
-    document.getElementById("username").innerText = username;
+    // Load stored profile image and username
+    window.onload = function () {
+      const storedImage = localStorage.getItem('profileImage');
+      const storedUsername = localStorage.getItem('username');
 
-    // 2. Load downloaded songs from localStorage
-    const downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
-    const songList = document.getElementById("downloaded-songs");
-    songList.innerHTML = ""; // Clear default item
+      if (storedImage) {
+        document.getElementById('profileImage').src = storedImage;
+      }
+      if (storedUsername) {
+        document.getElementById('usernameDisplay').textContent = storedUsername;
+      }
+    };
 
-    if (downloads.length > 0) {
-      downloads.forEach(song => {
-        const li = document.createElement("li");
-        li.textContent = song;
-        songList.appendChild(li);
-      });
-    } else {
-      songList.innerHTML = "<li>No songs downloaded yet.</li>";
-    }
-
-    // 3. Change profile picture
-    const uploadInput = document.getElementById("upload");
-    const profilePic = document.getElementById("profile-pic");
-
-    uploadInput.addEventListener("change", function () {
-      const file = uploadInput.files[0];
+    // Save new profile picture
+    document.getElementById('profileInput').addEventListener('change', function (event) {
+      const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
-          profilePic.src = e.target.result;
-          localStorage.setItem("profilePic", e.target.result); // Save to localStorage
+          const imageData = e.target.result;
+          document.getElementById('profileImage').src = imageData;
+          localStorage.setItem('profileImage', imageData);
         };
         reader.readAsDataURL(file);
       }
     });
 
-    // 4. Load saved profile picture
-    const savedPic = localStorage.getItem("profilePic");
-    if (savedPic) {
-      profilePic.src = savedPic;
-    }
+    // Save new username
+    document.getElementById('usernameInput').addEventListener('change', function () {
+      const newName = this.value.trim();
+      if (newName) {
+        document.getElementById('usernameDisplay').textContent = newName;
+        localStorage.setItem('username', newName);
+        this.value = '';
+      }
+    });
   </script>
-
-  
-
 
 </body>
 </html>
