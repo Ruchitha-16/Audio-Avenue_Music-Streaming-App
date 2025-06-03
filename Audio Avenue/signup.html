@@ -3,30 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <title>Sign Up - Audio Avenue</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="signup-body">
-  <div class="login-container">
-    <h2>Create Account</h2>
-    <form onsubmit="handleSignup(event)">
-  <input type="text" placeholder="Username" required />
-  <input type="password" placeholder="Password" required />
-  <input type="password" placeholder="Confirm Password" required />
-  <button type="submit">Create Account</button>
-</form>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <p style="margin-top: 10px;">Already have an account?
-      <a href="login.html" style="color: #6a5acd;">Login here</a>
-    </p>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('assets/images/forget-password-bg.jpg');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #e0dfff;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff4e88, #8f44fd);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #8f44fd;
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      box-shadow: 0 0 25px #ff4e88;
+      transform: scale(1.02);
+    }
+
+    .links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #b29dff;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      .login-container {
+        margin: 30px 20px;
+        padding: 35px 25px;
+        max-width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .login-container {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .login-btn {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .links {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2><i class="fa-solid fa-user-plus"></i> Create Account</h2>
+
+    <form>
+      <div class="input-wrapper">
+        <input type="text" placeholder="👤 Username" required>
+      </div>
+
+      <div class="input-wrapper">
+        <input type="password" placeholder="🔒 Password" id="password" required>
+        <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('password', this)"></i>
+      </div>
+
+      <div class="input-wrapper">
+        <input type="password" placeholder="🔒 Confirm Password" id="confirm-password" required>
+        <i class="fa-solid fa-eye toggle-password" onclick="togglePassword('confirm-password', this)"></i>
+      </div>
+
+      <button class="login-btn" type="submit">Sign Up</button>
+    </form>
+
+    <div class="links" style="margin-top: 15px;">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
   </div>
 
   <script>
-  function handleSignup(event) {
-    event.preventDefault(); // Prevent form from reloading the page
-    alert("Account created successfully! Now go to login.");
-    window.location.href = "login.html"; // redirect to login
-  }
-</script>
- 
+    function validateSignupForm(event) {
+      event.preventDefault();
+
+      const username = document.querySelector('input[placeholder="👤 Username"]');
+      const password = document.querySelector('input[placeholder="🔒 Password"]');
+      const confirm = document.querySelector('input[placeholder="🔒 Confirm Password"]');
+
+      if (password.value.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return;
+      }
+
+      if (password.value !== confirm.value) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      alert("Account created successfully! Now go to login.");
+      window.location.href = "login.html";
+    }
+
+    function togglePassword(fieldId, icon) {
+      const field = document.getElementById(fieldId);
+      if (field.type === "password") {
+        field.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        field.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+
+    document.querySelector("form").addEventListener("submit", validateSignupForm);
+  </script>
 </body>
 </html>
