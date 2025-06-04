@@ -1,5 +1,3 @@
-
-
 .player-controls {
   display: flex;
   justify-content: center;
@@ -10,6 +8,7 @@
   width: 200px;
 }
 
+/* === Login Page Styles === */
 .login-body {
   display: flex;
   justify-content: center;
@@ -17,27 +16,6 @@
   height: 100vh;
   background: rgba(92, 92, 94, 0.404);
 }
-
-.login-container {
-  background: rgba(90, 89, 89, 0.452);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px gray;
-}
-
-/* Login Page Styles */
-.login-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('assets/images/login-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-}
-
-
-
 
 .login-container {
   background: rgba(255, 255, 255, 0.95);
@@ -92,31 +70,62 @@
   cursor: pointer;
 }
 
-/* === Audio Avenue: INDEX PAGE STYLES START === */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .login-container {
+    margin: 30px 20px;
+    padding: 35px 25px;
+    max-width: 90%;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .login-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .toggle-password {
+    font-size: 16px;
+    right: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .links {
+    font-size: 13px;
+  }
+}
+
+/* === Audio Avenue: INDEX PAGE STYLES START === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   transition: background-image 0.5s ease;
-  background-image: url('assets/images/light-bg.png');
+  background-image: url('assets/images/light-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: none;
+  image-rendering: auto;
 }
-
-body {
-  background-image: url('assets/images/dark-bg.png'); /* or 'dark-bg.png' if in dark mode */
-  background-size: cover;               /* Ensures full coverage */
-  background-position: center center;   /* Keeps it centered */
-  background-repeat: no-repeat;         /* Prevents repeating */
-  background-attachment: fixed;         /* Keeps background fixed while scrolling */
-  backdrop-filter: none;                /* Removes extra blur filters if added elsewhere */
-  image-rendering: auto;                /* Ensures image is not pixelated */
-}
-
 
 body.dark {
-  background-image: url('assets/images/dark-bg.png');
+  background-image: url('assets/images/dark-bg.jpg');
 }
 
 .mode-toggle {
@@ -148,7 +157,7 @@ body.dark .mode-toggle {
   display: block;
   margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* glowing effect */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   transition: transform 0.3s ease;
 }
 
@@ -161,22 +170,91 @@ body.dark .mode-toggle {
   font-weight: bold;
   color: #000;
   margin-top: 10px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   animation: pulse 2s infinite;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+.search-input {
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 25px 0 0 25px;
+  font-size: 18px;
+  width: 400px;
+  transition: 0.4s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ba68c8;
+  box-shadow: 0 0 10px #ba68c8;
+}
+
+.search-btn {
+  padding: 11px 16px; /* Slightly reduced height & width */
+  border: 2px solid #ccc;
+  background-color: #ba68c8;
+  color: white;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* Ensures icon stays proportional */
+}
+
+.search-btn:hover {
+  background-color: #9c27b0;
+}
+
+.search-icon {
+  font-size: 20px;
+}
+
+
+/* Neon blinking effect for matched song */
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  border: 2px solid #4be9d4d2;
+  box-shadow: 0 0 20px #f125e7;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
   0%, 100% {
-    color: #000;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    color: hwb(290 11% 47%);
+    text-shadow: 2px 2px 8px hsla(308, 94%, 67%, 0.418);
   }
   50% {
-    color: #6e00ff;
-    text-shadow: 2px 2px 12px #e4d93c96;
+    color: lab(87.82% -9.55 85.96);
+    text-shadow: 2px 2px 12px hwb(59 15% 3% / 0.466);
   }
 }
-
-
 
 @keyframes zoomIn {
   from {
@@ -185,17 +263,6 @@ body.dark .mode-toggle {
   }
   to {
     transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -215,7 +282,6 @@ body.dark .mode-toggle {
   margin-top: 10px;
 }
 
-
 .song-card:hover {
   transform: scale(1.03);
 }
@@ -230,79 +296,125 @@ body.dark .song-card {
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* instead of 'cover' */
+  object-fit: contain;
   border-radius: 10px;
 }
 
-/* Transition for smooth color change */
+/* Smooth text transition */
 .song-card h3,
 .song-card p {
   transition: color 0.5s ease;
+  text-align: center;
 }
 
-/* Light mode (default): Purple color */
+/* Default (light mode) text color */
 .song-card h3,
 .song-card p {
-  color: purple;
+  color: hsl(303, 63%, 41%);
 }
 
-/* Make the <p> bold */
+/* Make song-card <p> bold */
 .song-card p {
-  font-weight: 600; /* or bold */
+  font-weight: 600;
 }
 
-/* Dark mode: override with gold color */
-body.dark-mode .song-card h3,
-body.dark-mode .song-card p {
-  color: gold;
+/* Dark mode overrides */
+body.dark .song-card h3,
+body.dark .song-card p {
+  color: gold !important;
 }
 
-/*profile icon with username */
+/* Profile icon with username */
 .profile-container {
   position: absolute;
   top: 10px;
   left: 10px;
-  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .profile-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* circular shape */
-  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
 }
 
 .username-text {
   color: #f3d113;
   font-weight: bold;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 13px;
+  text-align: center;
 }
 
+/* === Responsive Enhancements === */
+@media screen and (max-width: 1024px) {
+  .song-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 20px;
+  }
 
-/* === Audio Avenue: INDEX PAGE STYLES END === */
+  .logo {
+    width: 120px;
+  }
 
-/* === Audio Avenue: signup page  === */
-.signup-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('assets/images/signup-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  .welcome-title {
+    font-size: 1.5rem;
+  }
 }
 
-/* Forgot Password Page Background */
-.forgot-body {
-  background-image: url('assets/images/forget-password-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 768px) {
+  .song-container {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+
+  .header-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .welcome-title {
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+
+  .mode-toggle {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .profile-container {
+    top: 5px;
+    left: 5px;
+  }
+
+  .username-text {
+    font-size: 12px;
+  }
 }
 
+@media screen and (max-width: 480px) {
+  .song-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .song-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .song-card h3 {
+    font-size: 16px;
+  }
+}
