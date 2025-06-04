@@ -12,32 +12,45 @@
     <span id="mode-icon">🌙</span>
   </div>
 
-<!-- Profile Icon with Username -->
-<div class="profile-container">
-  <a href="profile.html">
-    <img id="music-profile-pic" src="assets/images/profile-icon.png" alt="Profile" style="width: 50px; height: 50px; border-radius: 50%;" />
+  <!-- ✅ Start wrapper for all page content -->
+  <div class="main-wrapper">
 
+    <!-- ✅ Profile Icon + Username -->
+    <div class="profile-container">
+      <a href="profile.html">
+        <img id="music-profile-pic" src="assets/images/profile-icon.png" alt="Profile" class="profile-icon" />
+      </a>
+      <p id="usernameDisplay" class="username-text"></p>
+    </div>
 
-  </a>
-  <p id="usernameDisplay" class="username-text"></p>
+    <!-- ✅ Centered Logo and Welcome Message -->
+    <div class="header-container">
+      <img src="assets/images/logo.png" alt="Audio Avenue Logo" class="logo">
+      <h1 class="welcome-title">Welcome to Audio Avenue 🎵</h1>
+    </div>
+
+    <!-- ✅ Search Bar -->  
+    <div class="search-container">
+  <input
+    type="text"
+    class="search-input"
+    id="searchInput"
+    placeholder="Search for a song..."
+  />
+  <button class="search-btn" onclick="highlightSong()">
+  <span class="search-icon">🔍</span>
+  </button>
 </div>
 
 
- 
-  <!-- Centered Logo and Welcome Message -->
-<div class="header-container">
-  <img src="assets/images/logo.png" alt="Audio Avenue Logo" class="logo">
-  <h1 class="welcome-title">Welcome to Audio Avenue 🎵</h1>
 
-
-
+    <!-- ✅ Song List Starts -->
     <div class="song-container">
       <!-- Song 1 -->
       <div class="song-card">
         <img class="song-img" src="assets/images/song1.png" alt="Song 1">
         <h3>Song 1</h3>
         <p>Golden Sparrow</p>
-
         <audio controls>
           <source src="assets/songs/song1.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
@@ -48,7 +61,7 @@
       <div class="song-card">
         <img class="song-img" src="assets/images/song2.png" alt="Song 2">
         <h3>Song 2</h3>
-        <p> Oy! Oy!</p>
+        <p>Oy! Oy!</p>
         <audio controls>
           <source src="assets/songs/song2.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
@@ -70,7 +83,7 @@
       <div class="song-card">
         <img class="song-img" src="assets/images/song4.png" alt="Song 4">
         <h3>Song 4</h3>
-        <p> Kollagotte</p>
+        <p>Kollagotte</p>
         <audio controls>
           <source src="assets/songs/song4.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
@@ -81,13 +94,13 @@
       <div class="song-card">
         <img class="song-img" src="assets/images/song5.png" alt="Song 5">
         <h3>Song 5</h3>
-        <p> Manasaa</p>
+        <p>Manasaa</p>
         <audio controls>
           <source src="assets/songs/song5.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
-
+      
       <!-- Song 6 -->
       <div class="song-card">
         <img class="song-img" src="assets/images/song6.png" alt="Song 6">
@@ -571,102 +584,103 @@
             </audio>
         </div>
 
-    <!-- Song 50 -->
-        <div class="song-card">
-            <img class="song-img" src="assets/images/song50.png" alt="Song 50">
-            <h3>Song 50</h3>
-            <p>Poolamme pilla</p>
-            <audio controls>
-            <source src="assets/songs/song50.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-            </audio>
-        </div>
+      <!-- Song 50 -->
+      <div class="song-card">
+        <img class="song-img" src="assets/images/song50.png" alt="Song 50">
+        <h3>Song 50</h3>
+        <p>Poolamme pilla</p>
+        <audio controls>
+          <source src="assets/songs/song50.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div> <!-- ✅ End of song-container -->
 
-    </div>
-  </div>
+  </div> <!-- ✅ End of main-wrapper -->
 
+  <!-- ✅ Scripts -->
   <script>
     function toggleMode() {
       const body = document.body;
       const icon = document.getElementById("mode-icon");
-
       body.classList.toggle("dark-mode");
       body.classList.toggle("light-mode");
 
       if (body.classList.contains("dark-mode")) {
         icon.textContent = "☀️";
-        body.style.backgroundImage = "url('assets/images/dark-bg.png')";
+        body.style.backgroundImage = "url('assets/images/dark-bg.jpg')";
       } else {
         icon.textContent = "🌙";
-        body.style.backgroundImage = "url('assets/images/light-bg.png')";
+        body.style.backgroundImage = "url('assets/images/light-bg.jpg')";
       }
     }
   </script>
 
-
-<script>
-  const allAudioElements = document.querySelectorAll('audio');
-
-  allAudioElements.forEach(audio => {
-    audio.addEventListener('play', () => {
-      allAudioElements.forEach(otherAudio => {
-        if (otherAudio !== audio) {
-          otherAudio.pause(); // Pause any other audio
-        }
+  <script>
+    const allAudioElements = document.querySelectorAll('audio');
+    allAudioElements.forEach(audio => {
+      audio.addEventListener('play', () => {
+        allAudioElements.forEach(otherAudio => {
+          if (otherAudio !== audio) {
+            otherAudio.pause();
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
-<script>
-  // This function will save downloaded song names to localStorage
-  function downloadSong(songName) {
-    let downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
-    if (!downloads.includes(songName)) {
-      downloads.push(songName);
-      localStorage.setItem("downloads", JSON.stringify(downloads));
+  <script>
+    function handleDownload(songName) {
+      alert("Downloading: " + songName);
+      downloadSong(songName);
     }
-  }
-</script>
 
-
-<script>
-  function handleDownload(songName) {
-    // Trigger download (you may already have this implemented)
-    alert("Downloading: " + songName);
-
-    // Store song in localStorage
-    downloadSong(songName);
-  }
-
-  function downloadSong(songName) {
-    let downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
-    if (!downloads.includes(songName)) {
-      downloads.push(songName);
-      localStorage.setItem("downloads", JSON.stringify(downloads));
+    function downloadSong(songName) {
+      let downloads = JSON.parse(localStorage.getItem("downloads") || "[]");
+      if (!downloads.includes(songName)) {
+        downloads.push(songName);
+        localStorage.setItem("downloads", JSON.stringify(downloads));
+      }
     }
-  }
-</script>
- 
+  </script>
 
-
-
-<script>
-  window.onload = function() {
-    const username = localStorage.getItem("username");
-    if (username) {
-      document.getElementById("usernameDisplay").textContent = Ruchitha;
+  <script>
+    // Dynamic Greeting
+    const user = localStorage.getItem("username") || "Guest";
+    const welcome = document.querySelector(".welcome-title");
+    if (welcome) {
+      welcome.innerHTML = `Welcome, ${user}! 🎵`;
     }
-  };
-</script>
 
+    // Set profile image
+    const savedPic = localStorage.getItem("profilePic");
+    if (savedPic) {
+      const profile = document.getElementById("music-profile-pic");
+      if (profile) {
+        profile.src = savedPic;
+      }
+    }
+  </script>
 
 <script>
-  const profilePic = localStorage.getItem("profilePic");
-  if (profilePic) {
-    document.getElementById("music-profile-pic").src = profilePic;
+  function highlightSong() {
+    const query = document.getElementById("searchInput").value.toLowerCase(); // ✅ fixed ID
+    const allSongs = document.querySelectorAll("div.song-card");
+    let found = false;
+
+    allSongs.forEach(song => {
+      const title = song.innerText.toLowerCase();
+      song.classList.remove("blink"); // Remove previous effect
+      if (title.includes(query) && query !== "") {
+        song.classList.add("blink"); // Add blinking neon effect
+        found = true;
+      }
+    });
+
+    if (!found) alert("Song not found!");
   }
 </script>
- 
+
+
 </body>
 </html>
