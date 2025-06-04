@@ -1,8 +1,8 @@
-# Audio Avenue 🎵
+Audio-Avenue_Music-Streaming-App
 
 Audio Avenue is a music streaming web application built with HTML, CSS, and JavaScript.
 
-## Features
+Features
 - 🎧 Stream songs
 - 🎨 Dark/Light mode toggle
 - 🔍 Song search
@@ -10,12 +10,9 @@ Audio Avenue is a music streaming web application built with HTML, CSS, and Java
 - 📝 User Sign Up / Login with Forgot Password
 - 🌐 Responsive design
 
-## Technologies Used
+Technologies Used
 - HTML, CSS, JavaScript
 - GitHub for version control
 
-## Project Structure
-
-Audio Avenue 🎵
- listen through 
+live link to listen Audio Avenue music 
 https://ruchitha-16.github.io/Audio-Avenue_Music-Streaming-App/Audio%20Avenue/login.html
