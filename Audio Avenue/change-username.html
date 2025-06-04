@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Change Username - Audio Avenue</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('assets/images/username-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .change-container {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .change-container h2 {
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #e0dfff;
+    }
+
+    .change-container h2 i {
+      color: #ff4e88;
+    }
+
+    .profile-preview {
+      margin-bottom: 20px;
+    }
+
+    .profile-preview img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #ff4e88;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    .change-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #ff4e88, #90249e);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #8f44fd;
+      transition: 0.3s ease;
+    }
+
+    .change-btn:hover {
+      box-shadow: 0 0 25px #ff4e88;
+      transform: scale(1.02);
+    }
+
+    .error-msg {
+      color: #ff9999;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .toast {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="change-container">
+    <h2><i class="fa-solid fa-user-pen"></i> Change Username</h2>
+
+    <div class="profile-preview">
+      <img id="profileIcon" src="assets/images/profile-icon.png" alt="Profile Icon" />
+    </div>
+
+    <form onsubmit="return handleChange(event)">
+      <input type="text" id="newUsername" placeholder="🎧 New Username" required />
+      <p class="error-msg" id="errorMsg">Username must be at least 6 characters</p>
+      <button type="submit" class="change-btn">Update Username</button>
+    </form>
+
+    <div class="toast" id="toastMsg">Username updated successfully!</div>
+  </div>
+
+  <script>
+    const savedPic = localStorage.getItem("profilePic");
+    if (savedPic) {
+      document.getElementById("profileIcon").src = savedPic;
+    }
+
+    function handleChange(event) {
+      event.preventDefault();
+      const usernameInput = document.getElementById("newUsername");
+      const errorMsg = document.getElementById("errorMsg");
+      const toast = document.getElementById("toastMsg");
+
+      const newUsername = usernameInput.value.trim();
+
+      if (newUsername.length < 6) {
+        errorMsg.style.display = "block";
+        return false;
+      }
+
+      errorMsg.style.display = "none";
+      localStorage.setItem("username", newUsername);
+
+      toast.classList.add("show");
+
+      // Delay redirect to make sure toast shows
+      setTimeout(() => {
+        toast.classList.remove("show");
+        // ✅ Redirect to actual profile.html path
+        window.location.href = "./profile.html";
+      }, 2000);
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
